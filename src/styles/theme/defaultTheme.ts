@@ -57,7 +57,6 @@ export const defaultThemeOptions = {
             font: 'Manrope',
           },
           '& .MuiDataGrid-columnHeader': {
-            backgroundColor: 'darkgreen',
             borderColor: 'black',
             borderLeft: 1,
             borderRight: 1,
