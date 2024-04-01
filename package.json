@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "startJson": "json-server --watch src/api/api.json"
+    "start-json": "json-server --watch src/api/api.json --port 8080"
   },
   "dependencies": {
     "@emotion/react": "^11.11.3",
