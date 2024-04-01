@@ -1,7 +1,9 @@
-import { Box } from '@mui/material';
-import { DataGrid } from '@mui/x-data-grid';
+import { Dispatch, SetStateAction } from 'react';
 
-import { Foods } from '../../api/foodsType';
+import { Box } from '@mui/material';
+import { DataGrid, GridRowId } from '@mui/x-data-grid';
+
+import { Foods } from '@/api/foodsType';
 
 const columns = [
   { field: 'id', headerName: 'ID', minWidth: 70 },
@@ -14,12 +16,27 @@ const columns = [
 
 type AvailableFoodsTableProps = {
   rows: Foods[];
+  selected?: GridRowId[];
+  setSelected?: Dispatch<SetStateAction<GridRowId[]>>;
 };
 
-export const AvailableFoodsTable = ({ rows }: AvailableFoodsTableProps) => {
+export const AvailableFoodsTable = ({ rows, selected, setSelected }: AvailableFoodsTableProps) => {
   return (
     <Box style={{ height: 400, width: '100%' }}>
-      <DataGrid rows={rows} columns={columns} checkboxSelection hideFooter />
+      <DataGrid
+        rows={rows}
+        columns={columns}
+        checkboxSelection
+        hideFooter
+        rowSelectionModel={selected}
+        onRowSelectionModelChange={(newSelection) => {
+          if (!setSelected) {
+            return;
+          }
+
+          setSelected(newSelection);
+        }}
+      />
     </Box>
   );
 };
