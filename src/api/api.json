@@ -1,0 +1,21 @@
+{
+  "startServer": [
+    {
+      "cmd": "Start with startJson script"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "Admin",
+      "email": "admin@abv.bg"
+    }
+  ],
+  "exampleTwo": [
+    {
+      "exampleOne": "1",
+      "exampleTwo": "2",
+      "exampleThree": "3"
+    }
+  ]
+}
