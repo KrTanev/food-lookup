@@ -1,8 +1,7 @@
 import { Box, Typography } from '@mui/material';
 
 import { Foods } from '@/api/foodsType';
-
-import { calculateTotals } from './helpers';
+import { calculateTotals } from '@/utils/helpers/foodSelectionHelper';
 
 type LabelValueProps = {
   label: string;
