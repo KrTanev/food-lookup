@@ -1,15 +1,15 @@
 /** @type {import('next').NextConfig} */
 /* eslint-disable import/no-extraneous-dependencies */
-const withBundleAnalyzer = require("@next/bundle-analyzer")({
-  enabled: process.env.ANALYZE === "true",
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
 });
-const nextRoutes = require("nextjs-routes/config");
+const nextRoutes = require('nextjs-routes/config');
 
 const withRoutes = nextRoutes();
 module.exports = withRoutes(
   withBundleAnalyzer({
     eslint: {
-      dirs: ["."],
+      dirs: ['.'],
     },
     poweredByHeader: false,
     trailingSlash: true,
@@ -18,11 +18,11 @@ module.exports = withRoutes(
     async redirects() {
       return [
         {
-          source: "/",
-          destination: "/landing",
+          source: '/',
+          destination: '/food-selection',
           permanent: true,
         },
       ];
     },
-  })
+  }),
 );
