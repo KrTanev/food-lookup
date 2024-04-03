@@ -34,7 +34,8 @@ export default function FoodsSelection() {
               onClick={() => {
                 const selectedData = data?.filter((x) => selectedRows?.includes(x.id));
 
-                setSelectedFoods(selectedData || []);
+                setSelectedFoods((prev) => [...prev, ...(selectedData || [])]);
+                setSelectedRows([]);
               }}
             >
               Add selected foods
@@ -42,15 +43,29 @@ export default function FoodsSelection() {
           </Box>
           <AvailableFoodsTable
             rows={data || []}
+            checkboxSelection
             selected={selectedRows}
             setSelected={setSelectedRows}
           />
         </Box>
 
         <Box>
-          <Typography sx={{ color: 'lightblue', fontWeight: 500, fontSize: '20px' }}>
-            Selected foods
-          </Typography>
+          <Box display="flex" justifyContent="space-between">
+            <Typography sx={{ color: 'lightblue', fontWeight: 500, fontSize: '20px' }}>
+              Selected foods
+            </Typography>
+
+            <Button
+              sx={{ color: 'lightblue', fontWeight: 500, fontSize: '20px' }}
+              onClick={() => {
+                const selectedData = data?.filter((x) => selectedRows?.includes(x.id));
+
+                setSelectedFoods([]);
+              }}
+            >
+              Clear foods
+            </Button>
+          </Box>
 
           <AvailableFoodsTable rows={selectedFoods} />
         </Box>
