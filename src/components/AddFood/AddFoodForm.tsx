@@ -1,12 +1,10 @@
 import { Form, useForm } from 'react-hook-form';
 
 import { Box, Button } from '@mui/material';
-import { nameof } from 'ts-simple-nameof';
 
+import { usePostFood } from '@/api/foodsController';
 import { Foods } from '@/api/foodsType';
 import { FormField } from '@/components/common/FormField';
-
-import { usePostFood } from '../../api/foodsController';
 
 export const AddFoodForm = () => {
   const {
