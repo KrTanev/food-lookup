@@ -6,12 +6,11 @@ import { DataGrid, GridRowId } from '@mui/x-data-grid';
 import { Foods } from '@/api/foodsType';
 
 const columns = [
-  { field: 'id', headerName: 'ID', minWidth: 70 },
-  { field: 'name', headerName: 'Food Item', minWidth: 150, maxWidth: 180, flex: 1 },
-  { field: 'calories', headerName: 'Calories', minWidth: 110, maxWidth: 140, flex: 1 },
-  { field: 'protein', headerName: 'Protein (g)', minWidth: 110, maxWidth: 140, flex: 1 },
-  { field: 'carbs', headerName: 'Carbs (g)', minWidth: 110, maxWidth: 140, flex: 1 },
-  { field: 'fat', headerName: 'Fat (g)', minWidth: 110, maxWidth: 140, flex: 1 },
+  { field: 'name', headerName: 'Food Item', minWidth: 180, maxWidth: 210, flex: 1 },
+  { field: 'calories', headerName: 'Calories', minWidth: 140, maxWidth: 170, flex: 1 },
+  { field: 'protein', headerName: 'Protein (g)', minWidth: 140, maxWidth: 170, flex: 1 },
+  { field: 'carbs', headerName: 'Carbs (g)', minWidth: 140, maxWidth: 170, flex: 1 },
+  { field: 'fat', headerName: 'Fat (g)', minWidth: 140, maxWidth: 170, flex: 1 },
 ];
 
 type AvailableFoodsTableProps = {
