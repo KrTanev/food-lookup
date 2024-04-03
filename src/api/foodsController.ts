@@ -1,10 +1,9 @@
 import { QueryOptions } from '@tanstack/react-query';
-import axios from 'axios';
 
+import { axiosClient } from '@/config/axios.config';
+import { useMutationRequest } from '@/hooks/useMutationRequest';
 import { useQueryRequest } from '@/hooks/useQueryRequest';
 
-import { axiosClient } from '../config/axios.config';
-import { useMutationRequest } from '../hooks/useMutationRequest';
 import { Foods } from './foodsType';
 
 export const getFoods = async (): Promise<Foods[]> => {
@@ -28,9 +27,9 @@ export const useGetFoods = (options?: QueryOptions<Foods[]>) => {
   });
 };
 
-export const usePostFood = (options?: QueryOptions<Foods[]>) => {
+export const usePostFood = () => {
   return useMutationRequest({
-    func: () => getFoods(),
+    func: (data: Foods) => postFood(data),
     invalidateKeys: ['foods'],
   });
 };
