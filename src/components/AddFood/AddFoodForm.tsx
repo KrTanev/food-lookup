@@ -59,8 +59,8 @@ export const AddFoodForm = () => {
         <FormField register={register} id="carbs" label="Carbs" errors={errors} validateAsNumber />
         <FormField register={register} id="fat" label="Fat" errors={errors} validateAsNumber />
 
-        <Button type="submit" disabled={!isValid}>
-          Submit
+        <Button type="submit" disabled={!isValid} variant="contained" fullWidth>
+          Add food
         </Button>
       </Box>
     </Form>

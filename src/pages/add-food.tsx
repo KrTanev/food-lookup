@@ -12,6 +12,7 @@ export default function Home() {
         flexDirection="column"
         gap="26px"
         justifyContent="center"
+        mx={34}
       >
         <Typography sx={{ color: 'lightblue', fontWeight: 500, fontSize: '20px' }}>
           Add food
