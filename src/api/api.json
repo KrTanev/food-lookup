@@ -11,11 +11,26 @@
       "email": "admin@abv.bg"
     }
   ],
-  "exampleTwo": [
-    {
-      "exampleOne": "1",
-      "exampleTwo": "2",
-      "exampleThree": "3"
-    }
+  "foods": [
+    { "id": 1, "name": "Apple", "calories": 52, "protein": 0.3, "carbs": 14, "fat": 0.2 },
+    { "id": 2, "name": "Banana", "calories": 96, "protein": 1.2, "carbs": 23, "fat": 0.2 },
+    { "id": 3, "name": "Cherry", "calories": 50, "protein": 1, "carbs": 12, "fat": 0.3 },
+    { "id": 4, "name": "Date", "calories": 282, "protein": 2.5, "carbs": 75, "fat": 0.4 },
+    { "id": 5, "name": "Egg", "calories": 68, "protein": 5.5, "carbs": 0.6, "fat": 4.8 },
+    { "id": 6, "name": "Fig", "calories": 74, "protein": 0.7, "carbs": 19, "fat": 0.3 },
+    { "id": 7, "name": "Grape", "calories": 69, "protein": 0.7, "carbs": 18, "fat": 0.2 },
+    { "id": 8, "name": "Honeydew", "calories": 36, "protein": 0.5, "carbs": 9, "fat": 0.1 },
+    { "id": 9, "name": "Iceberg Lettuce", "calories": 5, "protein": 0.5, "carbs": 1, "fat": 0.1 },
+    { "id": 10, "name": "Jackfruit", "calories": 95, "protein": 1.5, "carbs": 25, "fat": 0.3 },
+    { "id": 11, "name": "Kiwi", "calories": 41, "protein": 0.8, "carbs": 10, "fat": 0.4 },
+    { "id": 12, "name": "Lemon", "calories": 29, "protein": 1.1, "carbs": 9, "fat": 0.3 },
+    { "id": 13, "name": "Mango", "calories": 60, "protein": 0.8, "carbs": 15, "fat": 0.4 },
+    { "id": 14, "name": "Nectarine", "calories": 44, "protein": 1.1, "carbs": 11, "fat": 0.3 },
+    { "id": 15, "name": "Orange", "calories": 43, "protein": 1, "carbs": 11, "fat": 0.2 },
+    { "id": 16, "name": "Papaya", "calories": 43, "protein": 0.5, "carbs": 11, "fat": 0.3 },
+    { "id": 17, "name": "Quince", "calories": 57, "protein": 0.4, "carbs": 15, "fat": 0.1 },
+    { "id": 18, "name": "Raspberry", "calories": 52, "protein": 1.2, "carbs": 12, "fat": 0.7 },
+    { "id": 19, "name": "Strawberry", "calories": 32, "protein": 0.7, "carbs": 8, "fat": 0.3 },
+    { "id": 20, "name": "Tomato", "calories": 18, "protein": 0.9, "carbs": 4, "fat": 0.2 }
   ]
 }

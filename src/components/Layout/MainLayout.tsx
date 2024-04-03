@@ -5,9 +5,11 @@ import Header from './Header';
 
 export default function MainLayout({ children }: { children: JSX.Element }) {
   return (
-    <Box>
+    <Box display="flex" flexDirection="column" justifyContent="center">
       <Header />
-      {children}
+      <Box display="flex" mb="100px">
+        {children}
+      </Box>
       <Footer />
     </Box>
   );

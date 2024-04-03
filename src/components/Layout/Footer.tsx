@@ -1,4 +1,4 @@
-import { Container, Typography, Box } from "@mui/material";
+import { Box, Container, Typography } from '@mui/material';
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -6,11 +6,11 @@ export default function Footer() {
   return (
     <Box
       sx={{
-        bgcolor: "#f7f7f7",
-        p: 6,
-        position: "fixed",
+        bgcolor: '#f7f7f7',
+        p: 2,
+        position: 'fixed',
         bottom: 0,
-        width: "100%",
+        width: '100%',
         zIndex: 9999,
       }}
       component="footer"
