@@ -1,9 +1,18 @@
 import { AppBar, Box, Toolbar, Typography } from '@mui/material';
+import { useRouter } from 'next/router';
 
-const selectedStyle = { fontWeight: 700, bgcolor: '#174cd1', borderRadius: 4, p: 1 };
+const selectedStyle = {
+  fontWeight: 700,
+  bgcolor: '#174cd1',
+  borderRadius: 4,
+  cursor: 'default',
+  minWidth: '180px',
+};
+const defaultStyle = { cursor: 'pointer', minWidth: '180px' };
 
-// TODO: Add check for selected path so you can apply the style for corresponding tab
 export default function Header() {
+  const router = useRouter();
+
   return (
     <AppBar position="static" sx={{ height: 80 }}>
       <Toolbar>
@@ -21,12 +30,20 @@ export default function Header() {
           <Typography
             variant="body1"
             component="div"
-            sx={{ fontWeight: 700, bgcolor: '#174cd1', borderRadius: 4, p: 1 }}
+            align="center"
+            sx={router.pathname === '/food-selection' ? selectedStyle : defaultStyle}
+            onClick={() => router.push('/food-selection')}
           >
             Food selection
           </Typography>
 
-          <Typography variant="body1" component="div" sx={{ marginLeft: 2, marginRight: 2 }}>
+          <Typography
+            variant="body1"
+            component="div"
+            align="center"
+            sx={router.pathname === '/add-food' ? selectedStyle : defaultStyle}
+            onClick={() => router.push('/add-food')}
+          >
             Add foods
           </Typography>
         </Box>
