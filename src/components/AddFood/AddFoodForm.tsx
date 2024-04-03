@@ -1,6 +1,8 @@
 import { Form, useForm } from 'react-hook-form';
 
 import { Box, Button } from '@mui/material';
+import { useRouter } from 'next/router';
+import { v4 as uuidv4 } from 'uuid';
 
 import { usePostFood } from '@/api/foodsController';
 import { Foods } from '@/api/foodsType';
@@ -11,11 +13,18 @@ export const AddFoodForm = () => {
     register,
     control,
     formState: { errors, isValid },
+    reset,
   } = useForm<Foods>({ mode: 'onChange' });
+  const router = useRouter();
 
   const postFoodMutation = usePostFood();
 
-  const onSubmit = (data: Foods) => postFoodMutation.mutate(data);
+  const onSubmit = (data: Foods) => {
+    postFoodMutation.mutateAsync({ ...data, id: uuidv4().toString() }).then(() => {
+      reset();
+      router.push('/food-selection');
+    });
+  };
 
   return (
     <Form onSubmit={({ data }) => onSubmit(data)} noValidate control={control}>

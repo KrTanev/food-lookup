@@ -13,7 +13,9 @@ export default function Home() {
         gap="26px"
         justifyContent="center"
       >
-        <Typography>Add food</Typography>
+        <Typography sx={{ color: 'lightblue', fontWeight: 500, fontSize: '20px' }}>
+          Add food
+        </Typography>
 
         <AddFoodForm />
       </Box>
