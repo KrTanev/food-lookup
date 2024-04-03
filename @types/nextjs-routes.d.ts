@@ -11,8 +11,8 @@ declare module "nextjs-routes" {
   } from "next";
 
   export type Route =
-    | StaticRoute<"/food-selection">
-    | StaticRoute<"/home">;
+    | StaticRoute<"/add-food">
+    | StaticRoute<"/food-selection">;
 
   interface StaticRoute<Pathname> {
     pathname: Pathname;
