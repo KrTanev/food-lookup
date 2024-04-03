@@ -1,6 +1,6 @@
 import { FieldErrors, FieldValues, Path, UseFormRegister } from 'react-hook-form';
 
-import { TextField } from '@mui/material';
+import { Box, TextField, Typography } from '@mui/material';
 
 interface FormFieldProps<T extends FieldValues> {
   id: Path<T>;
@@ -14,15 +14,28 @@ export const FormField = <T extends FieldValues>(props: FormFieldProps<T>) => {
   const { id, label, errors, validateAsNumber, register } = props;
 
   return (
-    <>
+    <Box display="flex" flexDirection="column" sx={{ width: '100%' }}>
       <TextField
-        {...register(id, { required: true })}
         label={label}
         variant="outlined"
         autoComplete="off"
+        error={Boolean(errors[id])}
         fullWidth
+        {...register(id, {
+          required: true,
+          validate: {
+            checkIfNumber: (value) => {
+              console.log(value);
+              return Number(value) > 0 || !validateAsNumber || 'Please enter number';
+            },
+          },
+        })}
       />
-      {errors[id] && <span>This field is required</span>}
-    </>
+      {errors[id] && (
+        <Typography fontSize="14px" color="red">
+          {errors[id]?.message?.toString() || 'This field is required'}
+        </Typography>
+      )}
+    </Box>
   );
 };
