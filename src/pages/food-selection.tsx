@@ -10,7 +10,7 @@ import { SelectedFoodsTotal } from '@/components/FoodSelection/SelectedFoodsTota
 import MainLayout from '@/components/Layout/MainLayout';
 
 export default function FoodsSelection() {
-  const { data } = useGetFoods();
+  const { data, isLoading } = useGetFoods();
 
   const [selectedRows, setSelectedRows] = useState<GridRowId[]>([]);
   const [selectedFoods, setSelectedFoods] = useState<Foods[]>([]);
@@ -46,6 +46,7 @@ export default function FoodsSelection() {
             checkboxSelection
             selected={selectedRows}
             setSelected={setSelectedRows}
+            isLoading={isLoading}
           />
         </Box>
 

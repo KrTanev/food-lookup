@@ -17,6 +17,7 @@ type AvailableFoodsTableProps = {
   rows: Foods[];
   selected?: GridRowId[];
   checkboxSelection?: boolean;
+  isLoading?: boolean;
   setSelected?: Dispatch<SetStateAction<GridRowId[]>>;
 };
 
@@ -24,6 +25,7 @@ export const AvailableFoodsTable = ({
   rows,
   selected,
   checkboxSelection,
+  isLoading,
   setSelected,
 }: AvailableFoodsTableProps) => {
   return (
@@ -33,6 +35,7 @@ export const AvailableFoodsTable = ({
         columns={columns}
         checkboxSelection={checkboxSelection}
         hideFooter
+        loading={isLoading}
         rowSelectionModel={selected}
         onRowSelectionModelChange={(newSelection) => {
           if (!setSelected) {
